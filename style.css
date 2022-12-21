@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: #343a40;
+    text-align: center;
+    position: relative;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper p {
+    position: relative;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 134px;
+    z-index: 9999;
+}
+
+.wrapper p::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: #343a40;
+    z-index: -1;
+    border-radius: 50%;
+    left: 19%;
+    top: -180%;
+    animation-name: shine;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shine {
+    0%,
+    100% {
+        box-shadow: 0 0 32px -12px rgba(246, 130, 0, .5);
+    }
+    50% {
+        box-shadow: 0 0 32px 3px rgba(246, 130, 0, .5);
+    }
+}
+
+.btn {
+    padding: 12px 32px;
+    background-color: #868e96;
+    border: 1px solid #a9a9a9;
+    border-radius: 10px;
+    color: #fff;
+    transition: all .2s ease;
+    cursor: pointer;
+    outline: 0;
+}
+
+.btn:not(:last-child) {
+    margin-right: 12px;
+}
